@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <img src="Icons/header-logo.png" height="50" width="50" alt="">
+                </div>
+                <span>StudyMate</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li data-page="dashboard" class="nav-item">
+                        <div class="nav-icon">
+                            <img src="svgIcons/dashboard1.svg" alt="">
+                        </div>
+                        <span>Dashboard</span>
+                    </li>
+
+                    <li data-page="subjects" class="nav-item">
+                        <div class="nav-icon">
+                            <img src="svgIcons/books1.svg" alt="">
+                        </div>
+                        <span>Subjects</span>
+                    </li>
+
+                    <li data-page="tasks" class="nav-item">
+                        <div class="nav-icon">
+                            <img src="svgIcons/tasks.svg" alt="">
+                        </div>
+                        <span>Tasks</span>
+                    </li>
+
+                    <li data-page="timer" class="nav-item">
+                        <div class="nav-icon">
+                            <img src="svgIcons/timer.svg" alt="">
+                        </div>
+                        <span>Timer</span>
+                    </li>
+
+                    <li data-page="notes" class="nav-item">
+                        <div class="nav-icon">
+                            <img src="svgIcons/notes.svg" alt="">
+                        </div>
+                        <span>Notes</span>
+                    </li>
+
+                    <li data-page="progress" class="nav-item">
+                        <div class="nav-icon">
+                            <img src="svgIcons/progress.svg" alt="">
+                        </div>
+                        <span>Progress</span>
+                    </li>
+                </ul>
+
+                <div class="border"></div>
+                <div class="settings">
+                    <ul class="nav-menu">
+                        <li data-page="settings" class="nav-item">
+                            <div class="nav-icon">
+                                <img src="svgIcons/settings.svg" alt="">
+                            </div>
+                            <span>Settings</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+            <div class="border bottom"></div>
+
+            <div class="sidebar-footer">
+                <div title="user-profile" class="user-profile">
+                    <img src="" alt="Profile" id="profile-img" class="avatar">
+
+                    <div class="user-info">
+                        <span id="user-name">Student</span>
+                        <button id="edit-name-btn" class="edit-btn">✎</button>
+                    </div>
+                </div>
+
+                <div title="theme toggle" class="theme-toggle">
+                    <img src="svgIcons/darkmode.svg" alt="Theme">
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <!-- Dashboard Page-->
+            <section id="dashboard" class="page">
+                <div class="dashboard-wrapper">
+                    <div class="dashboard-header">
+                        <h1 class="page-title">Dashboard</h1>
+                        <div class="border db"></div>
+                    </div>
+
+                    <div class="area1">
+                        <div class="header">
+                            <h2 class="greeting" id="dashboard-greeting">Good Morning, Meer!</h2>
+                            <p class="date" id="dashboard-date">Tuesday, 24 December 2025</p>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-label">Pending Tasks</div>
+                                <div class="stat-value" id="dashboard-pending-count">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Study Time Today</div>
+                                <div class="stat-value" id="dashboard-study-time">0h 0m</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Subjects Count</div>
+                                <div class="stat-value" id="dashboard-subject-count">0</div>
+                            </div>
+                        </div>
+
+                        <div class="shortcuts-card">
+                            <h3 class="card-title">Quick Shortcuts</h3>
+                            <div class="shortcuts-grid">
+                                <button class="shortcut-btn" id="btn-new-task">New Task</button>
+                                <button class="shortcut-btn" id="btn-start-timer">Start Timer</button>
+                                <button class="shortcut-btn secondary" id="btn-add-note">Add Note</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="area2">
+                        <div class="right-sidebar">
+                            <div class="summary-card">
+                                <div class="summary-header">
+                                    <h3 class="card-title">Today's Summary</h3>
+                                </div>
+
+                                <div id="dashboard-task-list">
+                                </div>
+
+
+                                <div class="border db"></div>
+                                <div class="chart-widget">
+                                    <div class="chart-header">Study Progress</div>
+
+                                    <div class="chart-flex-container">
+                                        <div class="y-axis-labels">
+                                            <span>100</span>
+                                            <span>50</span>
+                                            <span>0</span>
+                                        </div>
+
+                                        <div class="right-chart">
+
+                                            <div class="graph-area">
+                                                <div class="grid-line top"></div>
+                                                <div class="grid-line mid"></div>
+                                                <div class="grid-line bottom"></div>
+
+                                                <svg viewBox="0 0 300 150" preserveAspectRatio="none">
+                                                    <defs>
+                                                        <linearGradient id="blueGradient" x1="0" x2="0" y1="0" y2="1">
+                                                            <stop offset="0%" stop-color="#4a90e2" stop-opacity="0.4" />
+                                                            <stop offset="100%" stop-color="#4a90e2" stop-opacity="0" />
+                                                        </linearGradient>
+                                                    </defs>
+
+                                                    <path d="M0,150 
+                                    L0,120 
+                                    C40,60 70,110 120,70 
+                                    C170,30 200,120 240,20 
+                                    L270,20 
+                                    L300,20 
+                                    L300,150 Z" fill="url(#blueGradient)" />
+
+                                                    <path d="M0,120 
+                                    C40,60 70,110 120,70 
+                                    C170,30 200,120 240,20 
+                                    L270,20
+                                    L300,20" fill="none" stroke="#3b71ca" stroke-width="3" stroke-linecap="round" />
+                                                </svg>
+                                            </div>
+                                            <div class="x-axis">
+                                                <span>Mon</span>
+                                                <span>Tue</span>
+                                                <span>Wed</span>
+                                                <span>Thu</span>
+                                                <span>Fri</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Subjects Page -->
+            <section id="subjects" class="page">
+                <div class="subjects-header">
+                    <h1 class="page-title">Subjects</h1>
+                    <button class="add-subject-btn">+ Add Subject</button>
+                </div>
+
+                <div class="card-container">
+                </div>
+
+                <div class="popup-card">
+                    <div class="popup-card-header">
+                        <h2>Add Subject</h2>
+                    </div>
+                    <div class="subject-name-title">
+                        <h3>Subject Name</h3>
+                        <input id="subject-name" type="text">
+                    </div>
+
+                    <h4>Color</h4>
+                    <div class="colors">
+                        <div class="color blue selected"></div>
+                        <div class="color red"></div>
+                        <div class="color green"></div>
+                        <div class="color orange"></div>
+                        <div class="color purple"></div>
+                        <div class="color yellow"></div>
+                        <div class="color sky"></div>
+                    </div>
+                    <div class="buttons">
+                        <button class="cancel-btn">Cancel</button>
+                        <button class="save-btn">Save</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tasks Page -->
+            <section id="tasks" class="page">
+                <div class="tasks-header">
+                    <h1 class="page-title">Tasks</h1>
+                </div>
+                <div class="task-buttons">
+                    <button class="add-task-btn">Add Task</button>
+                    <div class="dropdowns">
+                        <select name="all-tasks" id="all-tasks">
+                            <option value="all-tasks">All Tasks</option>
+                            <option value="pending-tasks">Pending Tasks</option>
+                            <option value="completed-tasks">Completed Tasks</option>
+                        </select>
+                        <select name="filter-subject" id="filter-subject">
+                            <option value="all">All Subjects</option>
+                            <option value="TOA">Theory of Automata</option>
+                            <option value="EDA">EDA</option>
+                            <option value="DAA">Design and Analysis of Algorithms</option>
+                            <option value="AI">Artificial Intelligence</option>
+                            <option value="IS">Information Security</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <h3 class="progress-info">Progress: 50% completed</h3>
+                    <div class="progress-parent">
+                        <div class="progress-child"></div>
+                    </div>
+                </div>
+
+                <div class="tasks-container">
+                </div>
+
+                <div class="popup-card add-task-popup">
+                    <div class="popup-card-header">
+                        <h2>Add Task</h2>
+                    </div>
+                    <div class="task-input">
+                        <h3>Task Title</h3>
+                        <input id="task-name" type="text">
+                    </div>
+                    <div class="subject-input">
+                        <h3>Subject</h3>
+                        <select name="task-subject" id="task-subject-select">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="due-date-info">
+                        <h3>Due Date</h3>
+                        <input id="due-date-calender" type="date" value="2025-12-25">
+
+                        <div class="buttons">
+                            <button class="cancel-btn" id="cancel-task-btn">Cancel</button>
+                            <button class="save-btn" id="save-task-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timer -->
+            <section id="timer" class="page">
+                <h1 class="page-title">Study Timer</h1>
+                <div class="border db"></div>
+
+                <div class="timer-area">
+                    <div class="timer-display">
+                        <div class="circular-progress">
+                            <span class="time"></span>
+                        </div>
+                        <div class="actual-progress"></div>
+                    </div>
+
+                    <div class="controls-container">
+                        <div class="control-row1">
+                            <div class="subject-select-wrapper">
+                                <label>Subject</label>
+                                <select class="subject-select">
+                                    <option value="" disabled selected>Select Subject</option>
+                                </select>
+                            </div>
+                            <div class="mode-buttons">
+                                <button class="mode-btn active">
+                                    <span class="mins">25 mins</span>
+                                    <span class="label">Study</span>
+                                </button>
+                                <button class="mode-btn">
+                                    <span class="mins">5 mins</span>
+                                    <span class="label">Break</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="control-row2">
+                            <button class="action-btn start">Start</button>
+                            <button class="action-btn pause">Pause</button>
+                            <button class="action-btn reset">Reset</button>
+                        </div>
+                    </div>
+
+                    <div class="timer-stats-card">
+                        <h3>Session Stats</h3>
+                        <div class="timer-stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-label">Current Session</span>
+                                <span class="stat-time">25m</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Last Session Duration</span>
+                                <span class="stat-time">25m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notes -->
+            <section id="notes" class="page">
+                <h1 class="page-title">Notes</h1>
+                <div class="search-notes-wrapper">
+                    <input type="search" placeholder="Search Notes...">
+                    <button class="add-note-btn">Add Note</button>
+                </div>
+
+                <div class="notes-container">
+                </div>
+
+                <div class="add-note-popup-card">
+                    <div class="popup-card-header">
+                        <h2>Add Note</h2>
+                    </div>
+
+                    <div class="subject-input">
+                        <h3>Subject</h3>
+                        <select name="note-subject" id="note-subject-select">
+                            <option value="TOA">Theory of Automata</option>
+                            <option value="EDA">EDA</option>
+                            <option value="DAA">Design and Analysis of Algorithms</option>
+                            <option value="AI">Artificial Intelligence</option>
+                            <option value="IS">Information Security</option>
+                        </select>
+                    </div>
+                    <div class="note-info">
+                        <h3>Note Title</h3>
+                        <input id="note-title-input" type="text" placeholder="e.g. Recursion Tips">
+                    </div>
+                    <div class="note-content">
+                        <h3>Content</h3>
+                        <textarea id="note-content-input" name="note-area" rows="5" style="resize: none;"
+                            placeholder="Write Your Notes Here..."></textarea>
+                    </div>
+                    <div class="popup-action-btn">
+                        <button class="note-cancel-btn" id="cancel-note-btn">Cancel</button>
+                        <button class="save-btn" id="save-note-btn">Save</button>
+                    </div>
+                </div>
+                <div class="view-note-overlay" id="view-note-modal">
+                    <div class="view-note-card">
+                        <div class="view-header">
+                            <h2 id="view-title">Note Title</h2>
+                            <button class="close-view-btn" id="close-view-btn">×</button>
+                        </div>
+                        <div class="view-meta-row">
+                            <span id="view-subject" class="subject-badge">Subject</span>
+                            <span id="view-date" class="date">Date</span>
+                        </div>
+                        <div class="view-body">
+                            <p id="view-content">Full content goes here...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Page -->
+            <section id="progress" class="page">
+                <div class="progress-header">
+                    <h1 class="page-title">Progress</h1>
+                    <button id="download-report-btn" class="action-btn start">
+                        <span>📥</span>
+                        <span>Download Report</span>
+                    </button>
+                </div>
+                <div class="progress-grid">
+                    <div class="progress-stat-cards">
+                        <div class="progress-card">
+                            <div class="progress-card-icon">
+                                <img src="svgIcons/clock.svg" alt="">
+                            </div>
+                            <div class="progress-card-content">
+                                <span class="progress-title">Total Study Time</span>
+                                <span class="progress-value">45h 20m</span>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-card-icon">
+                                <img src="svgIcons/tasks-completed.svg" alt="">
+                            </div>
+                            <div class="progress-card-content">
+                                <span class="progress-title">Tasks Completed</span>
+                                <div>
+                                    <span class="progress-value completed-tasks">32</span>
+                                    <span class="progress-value total-tasks">/ 50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-card-icon">
+                                <img src="svgIcons/book.svg" alt="">
+                            </div>
+                            <div class="progress-card-content">
+                                <span class="progress-title">Active Subjects</span>
+                                <span class="progress-value">5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3 class="card-title">Weekly Activity</h3>
+                        <div id="weekly-bar-chart"
+                            style="display: flex; justify-content: space-around; align-items: flex-end; height: 150px; padding-top: 20px;">
+                        </div>
+                    </div>
+
+                    <div class="subject-wise-progress-card">
+                        <h3 class="title">Subject-wise Progress</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Page -->
+            <section id="settings" class="page">
+                <h1 class="page-title">Settings</h1>
+                <div class="settings-grid">
+                    <div class="appearance-card">
+                        <h3 class="appearance-title">Appearance</h3>
+                        <div class="dark-mode-wrapper">
+                            <h4 class="title">Dark Mode</h4>
+                            <div class="darkmode-button">
+                                <div class="backside">
+                                    <div class="toggle"></div>
+                                    <img class="sun" src="svgIcons/sun.svg" alt="">
+                                    <img class="moon" src="svgIcons/nightmode.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3 class="theme-title">Theme</h3>
+                        <h4>Theme Color</h4>
+                        <div class="theme-colors">
+                            <div class="color theme-color blue"></div>
+                            <div class="color theme-color green"></div>
+                            <div class="color theme-color red"></div>
+                            <div class="color theme-color purple"></div>
+                            <div class="color theme-color orange"></div>
+                        </div>
+                    </div>
+
+                    <div class="data-management-card">
+                        <h3 class="data-management-title">Data Management</h3>
+                        <h4>Clear All Data</h4>
+                        <button class="clear-data-btn">Clear All Data</button>
+                    </div>
+                </div>
+
+                <div class="settings-popup-card">
+                    <h3>Clear All Data?</h3>
+                    <div class="disclaimer">
+                        <span>Are You Sure?</span>
+                        <span>This Action Cannot be Undone.</span>
+                    </div>
+                    <div class="action-btns">
+                        <button class="cancel-btn">Cancel</button>
+                        <button class="clear-data-btn">Clear Data</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
