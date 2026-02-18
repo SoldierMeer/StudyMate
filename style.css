@@ -15,18 +15,19 @@
     --bg-card: #FFFFFF;
     --bg-sidebar: #0F172A;
     --bg-input: #FFFFFF;
-    --bg-stat-box: #dfeefb; /* For the timer stats */
-    
+    --bg-stat-box: #dfeefb;
+    /* For the timer stats */
+
     /* Text Colors */
     --text-main: #1E293B;
     --text-secondary: #475569;
     --text-muted: #7b8faa;
     --text-white: #FFFFFF;
-    
+
     /* Borders & Lines */
     --border-color: #F1F5F9;
     --border-strong: #cbd5e1;
-    
+
     /* Shadows */
     --shadow-card: 5px 5px 10px 2px rgba(0, 0, 0, 0.08);
 }
@@ -34,23 +35,26 @@
 /* --- DARK MODE OVERRIDES --- */
 [data-theme="dark"] {
     /* Backgrounds */
-    --bg-body: #0f172a;       /* Dark Blue/Slate */
-    --bg-card: #1e293b;       /* Lighter Slate for cards */
-    --bg-sidebar: #020617;    /* Very Dark for sidebar */
+    --bg-body: #0f172a;
+    /* Dark Blue/Slate */
+    --bg-card: #1e293b;
+    /* Lighter Slate for cards */
+    --bg-sidebar: #020617;
+    /* Very Dark for sidebar */
     --bg-stat-box: #bac1ca;
-    
+
     /* Text Colors */
-    --page-title: #F8FAFC;     
+    --page-title: #F8FAFC;
     /* --text-secondary: #F8FAFC; */
     --text-muted: #94a3b8;
     --progress-info: #e0edfa;
     --time: #F8FAFC;
     --timer-label: #F8FAFC;
-    
+
     /* Borders */
     --border-color: #334155;
     --border-strong: #475569;
-    
+
     /* Shadows - made darker and more subtle */
     --shadow-card: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
 }
@@ -72,10 +76,11 @@ main.content section {
     display: none;
 }
 
-.page{
+.page {
     display: none;
 }
-.page.active{
+
+.page.active {
     display: block;
 }
 
@@ -84,38 +89,68 @@ main.content section {
     min-height: 100vh;
 }
 
-.stat-card, .subject-card, .task-card, .note-card, .progress-card, .popup-card, .settings-popup-card, .add-note-popup-card, .shortcuts-card, .summary-card, .timer-stats-card, .theme-card, .appearance-card, .data-management-card, .subject-wise-progress-card {
+.stat-card,
+.subject-card,
+.task-card,
+.note-card,
+.progress-card,
+.popup-card,
+.settings-popup-card,
+.add-note-popup-card,
+.shortcuts-card,
+.summary-card,
+.timer-stats-card,
+.theme-card,
+.appearance-card,
+.data-management-card,
+.subject-wise-progress-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-card);
     color: var(--text-main);
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     background-color: var(--bg-input);
     color: var(--text-main);
     border: 1px solid var(--border-strong);
 }
 
-.page-title, .greeting, .stat-value, .subject-name {
+.page-title,
+.greeting,
+.stat-value,
+.subject-name {
     color: var(--page-title);
 }
 
-.stat-label, .progress-title, .stat-label, .total-tasks {
+.stat-label,
+.progress-title,
+.stat-label,
+.total-tasks {
     color: var(--text-secondary);
 }
-.progress-info{
+
+.progress-info {
     color: var(--progress-info);
 }
-.card-title{
+
+.card-title {
     color: var(--card-title);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--text-main);
 }
 
-.date, .x-axis {
+.date,
+.x-axis {
     color: var(--text-muted);
 }
 
@@ -123,8 +158,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--bg-sidebar);
     /* Sidebar text is usually light even in light mode, so we keep it or use text-white */
 }
+
 .border {
-    border-top: 1px solid var(--border-color); /* Note: Sidebar might need specific border color if it stays dark */
+    border-top: 1px solid var(--border-color);
+    /* Note: Sidebar might need specific border color if it stays dark */
 }
 
 /* [data-theme="dark"] .content img {
@@ -197,6 +234,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     box-shadow: 0 4px 6px -1px var(--primary-shadow);
 }
+
 .border {
     border-top: 1px solid #1f2937;
     margin: 0px 16px;
@@ -217,34 +255,43 @@ h1, h2, h3, h4, h5, h6 {
     flex-shrink: 0;
     margin-bottom: 20px;
 }
-.user-profile{
+
+.user-profile {
     display: flex;
     align-items: center;
     gap: 10px;
     overflow: hidden;
 }
-.avatar{
+
+.avatar {
     width: 28px;
     height: 28px;
-    border-radius: 50%; /* Circle */
-    border: 2px solid var(--primary-color, #3b82f6); /* Blue border */
+    border-radius: 50%;
+    /* Circle */
+    border: 2px solid var(--primary-color, #3b82f6);
+    /* Blue border */
     object-fit: cover;
 }
+
 .user-info {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 6px;
 }
+
 #user-name {
     font-size: 14px;
     font-weight: 600;
     color: #f1f5f9;
-    max-width: 80px; /* Limits width */
+    max-width: 80px;
+    /* Limits width */
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Adds '...' if name is too long */
+    text-overflow: ellipsis;
+    /* Adds '...' if name is too long */
 }
+
 .edit-btn {
     background: none;
     border: none;
@@ -254,15 +301,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     transition: color 0.2s;
 }
+
 .edit-btn:hover {
     color: white;
 }
+
 .theme-toggle img {
     width: 30px;
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.2s;
 }
+
 .theme-toggle img:hover {
     opacity: 1;
 }
@@ -272,17 +322,21 @@ h1, h2, h3, h4, h5, h6 {
     /* ... your existing styles ... */
     transition: transform 0.3s ease;
     left: 3px;
-    transform: translateY(4%); /* Keep vertical alignment */
+    transform: translateY(4%);
+    /* Keep vertical alignment */
 }
 
 /* Active State (Dark Mode) - We will add the class 'active' via JS */
 .backside.active .toggle {
-    transform: translateX(26px) translateY(4%); /* Move circle to right */
-    background-color: var(--primary-color); /* Optional: Make knob blue when active */
+    transform: translateX(26px) translateY(4%);
+    /* Move circle to right */
+    background-color: var(--primary-color);
+    /* Optional: Make knob blue when active */
 }
 
 .backside.active {
-    background-color: #334155; /* Darker track */
+    background-color: #334155;
+    /* Darker track */
 }
 
 .nav-icon img {
@@ -301,12 +355,13 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr 340px;
     gap: 16px;
 } */
-.dashboard-wrapper{
+.dashboard-wrapper {
     display: grid;
     grid-template-columns: 1fr 320px;
     grid-template-rows: auto 1fr;
     gap: 14px;
 }
+
 .dashboard-header {
     grid-column: 1 / -1;
 }
@@ -568,10 +623,12 @@ svg {
     border-radius: 6px;
     font-size: 12px;
     font-weight: 500;
-    pointer-events: none; /* Let mouse pass through */
+    pointer-events: none;
+    /* Let mouse pass through */
     opacity: 0;
     transition: opacity 0.2s;
-    transform: translate(-50%, -150%); /* Center above cursor */
+    transform: translate(-50%, -150%);
+    /* Center above cursor */
     z-index: 1000;
     white-space: nowrap;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
@@ -582,13 +639,15 @@ svg {
     fill: var(--primary-color);
     stroke: white;
     stroke-width: 2px;
-    r: 4; /* Radius */
+    r: 4;
+    /* Radius */
     cursor: pointer;
     transition: r 0.2s;
 }
 
 .chart-dot:hover {
-    r: 6; /* Grow on hover */
+    r: 6;
+    /* Grow on hover */
 }
 
 /* Subjects */
@@ -646,13 +705,33 @@ svg {
 }
 
 /* 2. Map the colors (Copying your existing gradients to work on the strip) */
-.color-strip.blue { --bg: linear-gradient(135deg, #60A5FA, #2563EB); }
-.color-strip.red { --bg: linear-gradient(135deg, #F87171, #DC2626); }
-.color-strip.green { --bg: linear-gradient(135deg, #4ADE80, #16A34A); }
-.color-strip.orange { --bg: linear-gradient(135deg, #FB923C, #EA580C); }
-.color-strip.purple { --bg: linear-gradient(135deg, #A78BFA, #7C3AED); }
-.color-strip.yellow { --bg: linear-gradient(135deg, #FACC15, #CA8A04); }
-.color-strip.sky { --bg: linear-gradient(135deg, #38BDF8, #0284C7); }
+.color-strip.blue {
+    --bg: linear-gradient(135deg, #60A5FA, #2563EB);
+}
+
+.color-strip.red {
+    --bg: linear-gradient(135deg, #F87171, #DC2626);
+}
+
+.color-strip.green {
+    --bg: linear-gradient(135deg, #4ADE80, #16A34A);
+}
+
+.color-strip.orange {
+    --bg: linear-gradient(135deg, #FB923C, #EA580C);
+}
+
+.color-strip.purple {
+    --bg: linear-gradient(135deg, #A78BFA, #7C3AED);
+}
+
+.color-strip.yellow {
+    --bg: linear-gradient(135deg, #FACC15, #CA8A04);
+}
+
+.color-strip.sky {
+    --bg: linear-gradient(135deg, #38BDF8, #0284C7);
+}
 
 .subject-card .content {
     display: flex;
@@ -1025,7 +1104,7 @@ svg {
     background-size: 22px;
 }
 
-.buttons button{
+.buttons button {
     margin-top: 20px;
 }
 
@@ -1059,9 +1138,11 @@ svg {
 
     box-sizing: border-box;
 }
-.circular-progress .time{
+
+.circular-progress .time {
     color: var(--time);
 }
+
 .actual-progress {
     position: absolute;
     height: 250px;
@@ -1079,7 +1160,8 @@ svg {
     font-size: 46px;
     font-weight: 700;
 }
-.subject-select-wrapper label{
+
+.subject-select-wrapper label {
     color: var(--timer-label);
     font-size: 16px;
     font-weight: 500;
@@ -1235,9 +1317,11 @@ svg {
     width: 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z' /%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: 12px center; /* 12px from the left */
+    background-position: 12px center;
+    /* 12px from the left */
     background-size: 20px;
 }
+
 .search-notes-wrapper input:focus {
     outline: none;
     border-color: var(--primary-color);
@@ -1370,7 +1454,8 @@ svg {
 /* 1. Truncate text on the small card (So it doesn't look messy) */
 .note-third-row p {
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Show only 3 lines */
+    -webkit-line-clamp: 3;
+    /* Show only 3 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1379,13 +1464,15 @@ svg {
 
 /* 2. View Note Overlay (Dark Background) */
 .view-note-overlay {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dimmed background */
     z-index: 100;
     justify-content: center;
     align-items: center;
@@ -1396,14 +1483,16 @@ svg {
     background-color: var(--bg-card);
     width: 500px;
     max-width: 90%;
-    max-height: 80vh; /* Allow scrolling if note is HUGE */
+    max-height: 80vh;
+    /* Allow scrolling if note is HUGE */
     border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     gap: 15px;
-    overflow-y: auto; /* Scroll inside if needed */
+    overflow-y: auto;
+    /* Scroll inside if needed */
 }
 
 /* 4. Internal Styling */
@@ -1443,7 +1532,8 @@ svg {
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-main);
-    white-space: pre-wrap; /* Preserves paragraphs/line breaks */
+    white-space: pre-wrap;
+    /* Preserves paragraphs/line breaks */
 }
 
 /* Progress */
@@ -1488,18 +1578,23 @@ svg {
     display: flex;
     flex-direction: column;
 }
-.progress-header{
-    display: flex; 
-    justify-content: 
-    space-between; align-items: 
-    center; margin-bottom: 20px;
+
+.progress-header {
+    display: flex;
+    justify-content:
+        space-between;
+    align-items:
+        center;
+    margin-bottom: 20px;
 }
-.progress-header button{
-    display: flex; 
-    gap: 8px; 
+
+.progress-header button {
+    display: flex;
+    gap: 8px;
     align-items: center;
     justify-content: center;
 }
+
 .progress-title {
     font-size: 16px;
     font-weight: 500;
@@ -1560,17 +1655,18 @@ svg {
 }
 
 /* Progress Bar Chart Styling */
-.chart-card{
-    grid-column: 1/-1; 
+.chart-card {
+    grid-column: 1/-1;
     grid-row: 3/-1;
-    background: white; 
-    padding: 20px; 
-    border-radius: 16px; 
-    border: 1px solid var(--border-color); 
-    box-shadow: var(--shadow-card); 
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
     /* margin-bottom: 20px; */
     height: 250px;
 }
+
 .bar-container {
     display: flex;
     flex-direction: column;
@@ -1648,7 +1744,7 @@ svg {
     align-items: center;
 }
 
-.darkmode-button{
+.darkmode-button {
     cursor: pointer;
 }
 
@@ -1668,13 +1764,15 @@ svg {
     bottom: 8px;
     width: 18px;
 }
-.backside img.sun{
+
+.backside img.sun {
     position: absolute;
     left: 6px;
     bottom: 8px;
     width: 18px;
     /* z-index: -1; */
 }
+
 .toggle {
     position: absolute;
     top: 2px;
@@ -1738,7 +1836,8 @@ svg {
     box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
     transition: transform 0.1s;
 }
-.data-management-card button:hover{
+
+.data-management-card button:hover {
     transform: translateY(-1px);
     background: linear-gradient(135deg, #f96565, #ee1818);
 }
@@ -1779,10 +1878,11 @@ svg {
     width: 50%;
 }
 
-.action-btns button:hover{
+.action-btns button:hover {
     transform: translateY(-1px);
     background: linear-gradient(135deg, #f96565, #ee1818);
 }
+
 .disclaimer {
     display: flex;
     flex-direction: column;
@@ -1796,10 +1896,15 @@ svg {
     border: 1px solid var(--border-strong);
 }
 
-.action-btns .cancel-btn:hover{
+.action-btns .cancel-btn:hover {
     background: rgb(254, 245, 245);
 }
 
+.mobile-bottom-nav, 
+.hamburger-btn, 
+#sidebar-overlay {
+    display: none;
+}
 
 /* =========================================
    MEDIA QUERIES (RESPONSIVENESS)
@@ -1808,8 +1913,15 @@ svg {
 
 /* --- Tablet & Smaller Laptops (Max Width: 1024px) --- */
 @media screen and (max-width: 1024px) {
+
     /* Adjust Main Content Width */
-    #dashboard, #subjects, #tasks, #timer, #notes, #progress, #settings {
+    #dashboard,
+    #subjects,
+    #tasks,
+    #timer,
+    #notes,
+    #progress,
+    #settings {
         width: 90%;
         margin: 20px auto;
     }
@@ -1825,18 +1937,19 @@ svg {
         grid-row: auto;
         margin-top: 20px;
     }
-    
+
     .right-sidebar {
         position: static;
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Side by side summary and chart */
+        grid-template-columns: 1fr 1fr;
+        /* Side by side summary and chart */
         gap: 20px;
     }
 
     /* Cards: 2 Columns instead of 3 */
-    .stats-grid, 
-    .card-container, 
-    .notes-container, 
+    .stats-grid,
+    .card-container,
+    .notes-container,
     .progress-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1852,21 +1965,158 @@ svg {
 
     .sidebar {
         position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 70px; /* Bottom Nav Height */
-        flex-direction: row;
-        z-index: 1000;
-        padding: 0;
-        border-top: 1px solid var(--border-color);
-        box-shadow: 0px -4px 10px rgba(0,0,0,0.1);
-        background-color: var(--bg-sidebar); /* Ensure background is opaque */
+        left: -280px;
+        /* Hidden state */
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        flex-direction: column !important;
+        /* Force vertical column for hybrid menu */
+        z-index: 2000;
+        transition: transform 0.3s ease-in-out;
+        background-color: var(--bg-sidebar);
+        display: flex;
+        /* Ensure it's a flex container */
     }
 
-    /* Hide Desktop Elements */
-    .sidebar-header, 
-    .sidebar-footer, 
+    .sidebar.active {
+        transform: translateX(250px);
+        /* Slide in */
+    }
+
+    /* Reset internal sidebar nav to be a vertical column */
+    .sidebar nav {
+        flex-direction: column !important;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Ensure items inside the sliding sidebar stay in a neat column */
+    .sidebar nav ul.nav-menu {
+        flex-direction: column !important;
+        align-items: center;
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        margin-top: 100px;
+    }
+
+    /* Overlay logic */
+    .sidebar-overlay {
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1999;
+        backdrop-filter: blur(2px);
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    /* Hamburger Button Styling */
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 3000;
+        /* Force it to stay ABOVE the sidebar (z-index 2000) */
+        transition: left 0.3s ease-in-out;
+    }
+
+    .hamburger-btn span {
+        width: 100%;
+        height: 3px;
+        background: var(--primary-color);
+        border-radius: 10px;
+    }
+
+    /* Move the hamburger with the sidebar so it's always visible to close it */
+    .sidebar.active~.hamburger-btn {
+        left: 215px;
+        /* Pushes the button just outside the 200px sidebar */
+    }
+
+    /* Change hamburger color when sidebar is active for better visibility */
+    .sidebar.active~.hamburger-btn span {
+        background: var(--text-white);
+    }
+
+    /* 2. BOTTOM NAVIGATION (Core 4: Dashboard, Tasks, Timer, Notes) */
+    .mobile-bottom-nav {
+        display: flex !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 75px;
+        background-color: var(--bg-sidebar);
+        justify-content: space-around;
+        align-items: center;
+        z-index: 5000;
+        /* High z-index to stay on top */
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+        border-top: 1px solid var(--border-color);
+    }
+
+
+    /* Ensure Nav Items inside Bottom Bar look like icons */
+    .mobile-bottom-nav .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        color: #cbd5e1;
+        font-size: 10px;
+        flex: 1;
+        /* Equal spacing */
+    }
+
+    .mobile-bottom-nav .nav-icon img {
+        width: 26px;
+        height: 26px;
+    }
+
+    /* 3. CLEANUP: Hiding/Visibility Logic */
+
+    /* Hide items that moved to the bottom bar */
+    .sidebar [data-page="dashboard"],
+    .sidebar [data-page="subjects"],
+    .sidebar [data-page="tasks"],
+    .sidebar [data-page="settings"] {
+        display: none !important;
+    }
+
+    /* Explicitly show management items in sidebar */
+    .sidebar [data-page="timer"],
+    .sidebar [data-page="notes"],
+    .sidebar [data-page="progress"] {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 15px !important;
+        font-size: 14px;
+    }
+
+    /* Hide redundant desktop UI elements on mobile */
+    .sidebar-header,
+    .sidebar-footer,
     .border {
         display: none;
     }
@@ -1889,7 +2139,8 @@ svg {
     }
 
     .settings {
-        display: none; /* Hide settings icon on mobile nav */
+        display: none;
+        /* Hide settings icon on mobile nav */
     }
 
     .nav-item {
@@ -1909,10 +2160,12 @@ svg {
 
     /* 2. MAIN CONTENT SPACING FIX */
     .content {
-        padding-top: 40px !important; /* Fix: Adds space from top of phone screen */
-        padding-bottom: 100px; /* Fix: Adds space for bottom nav */
+        padding-top: 40px !important;
+        /* Fix: Adds space from top of phone screen */
+        padding-bottom: 100px;
+        /* Fix: Adds space for bottom nav */
         width: 100%;
-        margin-top: 70px;
+        margin-top: 50px;
     }
 
     .page {
@@ -1922,29 +2175,40 @@ svg {
     }
 
     /* Force pages to take full width */
-    #dashboard, #subjects, #tasks, #timer, #notes, #progress, #settings {
+    #dashboard,
+    #subjects,
+    #tasks,
+    #timer,
+    #notes,
+    #progress,
+    #settings {
         width: 100%;
         margin: 0;
         padding: 0 15px;
     }
 
+
+
     /* 3. DASHBOARD FIXES */
     .greeting {
         font-size: 24px;
     }
-    
+
     .stats-grid {
-        grid-template-columns: 1fr; /* 1 Column */
+        grid-template-columns: 1fr;
+        /* 1 Column */
     }
 
     .shortcuts-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* 2 buttons per row */
+        grid-template-columns: 1fr 1fr;
+        /* 2 buttons per row */
         gap: 10px;
     }
-    
+
     .right-sidebar {
-        grid-template-columns: 1fr; /* Stack vertically */
+        grid-template-columns: 1fr;
+        /* Stack vertically */
     }
 
     /* 4. SUBJECTS PAGE FIXES (REVISED) */
@@ -1962,7 +2226,8 @@ svg {
     }
 
     .card-container {
-        grid-template-columns: 1fr; /* Single column list */
+        grid-template-columns: 1fr;
+        /* Single column list */
         margin-top: 20px;
         gap: 15px;
     }
@@ -1970,34 +2235,54 @@ svg {
     /* Card Layout: Horizontal Row (Strip | Content) */
     .subject-card {
         display: flex;
-        flex-direction: row !important; /* Force side-by-side layout */
+        flex-direction: row !important;
+        /* Force side-by-side layout */
         align-items: center;
+        justify-content: center;
         padding: 15px;
-        max-height: 180px; /* Compact height */
+        max-height: 150px;
+        /* Compact height */
         position: relative;
+    }
+
+    .subject-card .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* ALIGN MIDDLE vertically */
+        align-items: center;
+        padding-top: 100px !important;
     }
 
     /* Color Strip: Vertical Line on Left */
     .color-strip {
-        width: 6px !important;       /* Thin vertical line */
-        height: auto !important;     /* Auto height */
-        align-self: stretch;         /* Stretch to match card height */
-        margin-bottom: 0 !important; /* Remove bottom margin */
-        margin-right: 15px;          /* Space between strip and text */
+        width: 6px !important;
+        /* Thin vertical line */
+        height: auto !important;
+        /* Auto height */
+        align-self: stretch;
+        /* Stretch to match card height */
+        margin-bottom: 0 !important;
+        /* Remove bottom margin */
+        margin-right: 15px;
+        /* Space between strip and text */
         border-radius: 4px;
     }
 
     /* Content Adjustment */
     .subject-card .content {
-        margin-top: 0 !important;    /* Remove top margin */
+        margin-top: 0 !important;
+        /* Remove top margin */
         align-items: flex-start;
         justify-content: center;
         text-align: left;
     }
 
     .subject-name {
-        font-size: 18px; /* Slightly smaller text for mobile */
-        max-width: 180px; /* Prevent text hitting icons */
+        font-size: 18px;
+        /* Slightly smaller text for mobile */
+        max-width: 180px;
+        /* Prevent text hitting icons */
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -2011,15 +2296,19 @@ svg {
     /* Icon Positioning */
     .action-area {
         position: absolute;
-        top: 50%;                 /* Center vertically */
-        right: 15px;              /* 15px from right edge */
-        transform: translateY(-50%); /* Perfect vertical center */
+        top: 50%;
+        /* Center vertically */
+        right: 15px;
+        /* 15px from right edge */
+        transform: translateY(-50%);
+        /* Perfect vertical center */
         display: flex;
         gap: 10px;
     }
 
     .action-area img {
-        width: 20px; /* Smaller icons for mobile */
+        width: 20px;
+        /* Smaller icons for mobile */
         height: 20px;
     }
 
@@ -2041,26 +2330,44 @@ svg {
     .tasks-container {
         grid-template-columns: 1fr;
     }
-    
+
     .add-task-btn {
+        width: 100%;
+    }
+
+    .dropdowns select {
+        height: 40px;
+        width: 100%;
+        /* Makes each dropdown full width of its container */
+        max-width: 100%;
+        margin-bottom: 10px;
+        /* Adds space between the two dropdowns */
+        border-radius: 20px;
+    }
+
+    /* Ensure the container allows them to stack and grow */
+    .dropdowns {
+        flex-direction: column;
         width: 100%;
     }
 
     /* 6. TIMER PAGE FIXES */
     #timer .page-title {
-        text-align: center; /* Center the title */
+        text-align: center;
         margin-bottom: 20px;
     }
 
     .timer-area {
         width: 100%;
     }
-    
+
     .control-row2 {
-        grid-template-columns: 1fr; /* Stack buttons vertically */
+        grid-template-columns: 1fr;
+        /* Stack buttons vertically */
     }
 
-    .circular-progress, .actual-progress {
+    .circular-progress,
+    .actual-progress {
         width: 220px;
         height: 220px;
     }
@@ -2069,16 +2376,23 @@ svg {
         grid-template-columns: 1fr;
     }
 
+    .subject-select-wrapper select {
+        background-image: none !important;
+        /* Removes the SVG icon */
+        padding-right: 12px !important;
+        /* Adjusts padding since arrow is gone */
+    }
+
     /* 7. NOTES PAGE FIXES */
     .notes-container {
         grid-template-columns: 1fr;
     }
-    
+
     .search-notes-wrapper {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .add-note-btn {
         width: 100%;
         padding: 12px;
@@ -2086,7 +2400,8 @@ svg {
 
     /* 8. PROGRESS PAGE FIXES */
     .progress-header {
-        flex-direction: column; /* Stack Title and Button */
+        flex-direction: column;
+        /* Stack Title and Button */
         align-items: flex-start;
         gap: 15px;
         margin-bottom: 25px;
@@ -2104,14 +2419,26 @@ svg {
         flex-direction: column;
         gap: 20px;
     }
-    
+
     .progress-stat-cards {
         flex-direction: column;
     }
-    
+
     .progress-card {
         width: 100%;
         padding-right: 20px;
+    }
+
+    .settings {
+        display: flex !important;
+        /* Forces the settings icon to show on mobile */
+    }
+
+    .nav-menu {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 0;
     }
 
     /* 9. SETTINGS PAGE FIXES */
@@ -2119,29 +2446,55 @@ svg {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
-    
+
     .action-btns button {
         width: 100%;
     }
 
     /* 10. CRITICAL POPUP FIXES (Centering) */
-    .popup-card, 
-    .add-task-popup, 
-    .add-note-popup-card, 
+    .popup-card,
+    .add-task-popup,
+    .add-note-popup-card,
     .settings-popup-card {
         position: fixed;
         top: 50% !important;
         left: 50% !important;
-        transform: translate(-50%, -50%); /* Centers element exactly */
+        transform: translate(-50%, -50%);
+        /* Centers element exactly */
         width: 90%;
         max-width: 350px;
         z-index: 2000;
         max-height: 90vh;
-        overflow-y: auto; /* Scroll if content is too long */
+        overflow-y: auto;
+        /* Scroll if content is too long */
     }
 
     .view-note-card {
         width: 90%;
         max-height: 80vh;
+    }
+
+    .mobile-bottom-nav {
+        display: flex !important;
+        /* Force visibility */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: var(--bg-sidebar);
+        /* Dark background for visibility */
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Ensure the icons and text inside the bottom bar are visible */
+    .mobile-bottom-nav .nav-item {
+        display: flex;
+        flex-direction: column;
+        color: #cbd5e1;
+        font-size: 10px;
     }
 }

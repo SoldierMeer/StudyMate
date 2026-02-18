@@ -1550,3 +1550,32 @@ if (sidebarThemeBtn) {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-menu');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    
+    // NARROW SELECTOR: Only target items inside the sliding sidebar
+    const sidebarNavItems = sidebar.querySelectorAll('.nav-item');
+
+    const toggleSidebar = () => {
+        if (sidebar && overlay) {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    };
+
+    if (hamburger) hamburger.addEventListener('click', toggleSidebar);
+    if (overlay) overlay.addEventListener('click', toggleSidebar);
+
+    // Sidebar-only logic (Subjects, Progress, Settings)
+    sidebarNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        });
+    });
+});

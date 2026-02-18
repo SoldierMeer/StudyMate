@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <button id="hamburger-menu" class="hamburger-btn" aria-label="Open Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <div class="app">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -520,7 +525,27 @@
             </section>
         </main>
     </div>
-
+    <nav class="mobile-bottom-nav">
+        <div class="nav-item" data-page="dashboard">
+            <div class="nav-icon"><img src="svgIcons/dashboard1.svg" alt="Dash"></div>
+            <span>Dash</span>
+        </div>
+        <div class="nav-item" data-page="subjects">
+            <div class="nav-icon"><img src="svgIcons/books1.svg" alt="Subjects"></div>
+            <span>Subjects</span>
+        </div>
+        <div class="nav-item" data-page="tasks">
+            <div class="nav-icon"><img src="svgIcons/tasks.svg" alt="Tasks"></div>
+            <span>Tasks</span>
+        </div>
+        <div class="nav-item" data-page="settings">
+            <div class="nav-icon"><img src="svgIcons/settings.svg" alt="Timer"></div>
+            <span>Settings</span>
+        </div>
+    </nav>
+    
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    
     <script src="script.js"></script>
 </body>
 
